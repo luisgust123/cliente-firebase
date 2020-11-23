@@ -1,0 +1,10 @@
+.dashboard-nav-content .dashboard-nav-number {
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: .005em;
+}
+
+.dashboard-nav-content .dashboard-nav-title {
+    margin-top: 5px;
+    opacity: 0.8;
+}

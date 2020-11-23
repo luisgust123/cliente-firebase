@@ -1,0 +1,18 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+
+  .example-full-width {
+    width: 100%;
+  }
+  
+  section.page-section {
+    padding: 2% 20px 5% 20px;
+    margin: 0 1% 25px 1%;
+}

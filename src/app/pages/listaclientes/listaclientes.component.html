@@ -1,0 +1,77 @@
+
+<div style="display: flex;">
+
+  <div style="width: 50%;">
+
+    <mat-card class="md-whiteframe-3dp dashboard-nav _md layout-align-space-between-center layout-row"
+      md-colors="{background: 'teal-500'}" layout="" layout-align="space-between center"
+      style="background: rgb(0, 150, 136); color: rgb(255, 255, 255);">
+      <div class="dashboard-nav-content left">
+        <div class="dashboard-nav-number">{{ promedioEdad }}</div>
+        <div class="dashboard-nav-title">Promedio de edades</div>
+      </div>
+
+    </mat-card>
+  </div>
+
+
+  <div style="width: 50%;">
+    <mat-card class="md-whiteframe-3dp dashboard-nav _md layout-align-space-between-center layout-row"
+      md-colors="{background: 'blue-500'}" layout="" layout-align="space-between center"
+      style="background: rgb(33, 150, 243); color: rgb(255, 255, 255);">
+      <div class="dashboard-nav-content left">
+        <div class="dashboard-nav-number">{{ desviacionestandarEdad }}</div>
+        <div class="dashboard-nav-title">Desviacion estandar de edades</div>
+      </div>
+
+    </mat-card>
+
+  </div>
+</div>
+
+<mat-toolbar>Lista de Clientes</mat-toolbar>
+
+
+<div class="example-container mat-elevation-z8">
+
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="nombres">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.nombre}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="apellidos">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.apellido}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edad">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Edad </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.edad}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaNacimiento">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> fecha de Nacimiento </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.fechaNacimiento | date: "dd/MM/yyyy"}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="fechaprobMuerte">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> fecha de muerte probable </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.fechaprobMuerte | date: "dd/MM/yyyy"}} </mat-cell>
+    </ng-container>
+    
+
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+
+<br>

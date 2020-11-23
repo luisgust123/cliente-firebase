@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "intercoptest": {
+      "hosting": {
+        "intercorp": [
+          "intercoptest"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "intercoptest"
+  }
+}
